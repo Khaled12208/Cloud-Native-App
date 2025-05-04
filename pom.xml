@@ -27,6 +27,10 @@
 
     <modules>
         <module>api-gateway</module>
+        <module>eureka-server</module>
+        <module>auth-service</module>
+        <module>inventory-service</module>
+        <module>product-service</module>
     </modules>
 
     <dependencyManagement>
