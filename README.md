@@ -15,13 +15,15 @@ This is a cloud-native application built with Spring Boot, Spring Cloud, and Spr
 ## Project Structure
 
 ```
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   └── resources/
-│   └── test/
-├── .gitignore
-├── pom.xml
+cloud-native-app/
+├── api-gateway/                 # API Gateway Service
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   └── resources/
+│   │   └── test/
+│   └── pom.xml
+├── pom.xml                      # Root POM file
 └── README.md
 ```
 
@@ -58,15 +60,24 @@ cd cloud-native-app
 mvn clean install
 ```
 
-3. Run the application
+3. Run the API Gateway
 
 ```bash
+cd api-gateway
 mvn spring-boot:run
 ```
 
 ## Development
 
-This project follows a microservices architecture. Each service will be developed as a separate module with its own configuration and dependencies.
+This project follows a microservices architecture. Each service is developed as a separate module with its own configuration and dependencies.
+
+### Available Services
+
+1. API Gateway (Port: 8080)
+   - Entry point for all client requests
+   - Route management
+   - Request/Response transformation
+   - Security
 
 ## Contributing
 

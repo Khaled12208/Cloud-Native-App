@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: example_route
+          uri: http://httpbin.org
+          predicates:
+            - Path=/get/**
+          filters:
+            - AddRequestHeader=X-Request-From, Gateway
+            - AddResponseHeader=X-Response-From, Gateway
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
