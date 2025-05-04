@@ -162,23 +162,23 @@ sequenceDiagram
 
 ```mermaid
 graph TB
-    subgraph Client Layer
+    subgraph Client_Layer
         Client[Client Applications]
     end
 
-    subgraph Gateway Layer
+    subgraph Gateway_Layer
         Gateway[API Gateway]
         Security[Security Layer]
     end
 
-    subgraph Service Layer
+    subgraph Service_Layer
         Eureka[Eureka Server]
         Auth[Auth Service]
         Product[Product Service]
         Inventory[Inventory Service]
     end
 
-    subgraph Data Layer
+    subgraph Data_Layer
         AuthDB[(Auth DB)]
         ProductDB[(Product DB)]
         InventoryDB[(Inventory DB)]
@@ -186,8 +186,8 @@ graph TB
 
     Client --> Gateway
     Gateway --> Security
-    Security --> Service Layer
-    Service Layer --> Eureka
+    Security --> Service_Layer
+    Service_Layer --> Eureka
     Auth --> AuthDB
     Product --> ProductDB
     Inventory --> InventoryDB
@@ -198,14 +198,14 @@ graph TB
 
 ```mermaid
 graph TB
-    subgraph Security Components
+    subgraph Security_Components
         APIKey[API Key Validation]
         JWT[JWT Token Validation]
         RBAC[Role-Based Access Control]
         IPFilter[IP-based Access Control]
     end
 
-    subgraph Security Flow
+    subgraph Security_Flow
         Request[Client Request]
         Gateway[API Gateway]
         Auth[Auth Service]
